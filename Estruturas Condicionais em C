@@ -1,0 +1,93 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <Windows.h>
+#include <locale.h>
+
+
+void cadastro_notas() {
+	char nome_Aluno[50];
+	float nota1, nota2, nota3, nota4;
+	int i = 0;
+	int quantidade = 5;
+	char resultado[50];
+	system("cls");
+	printf("Cadastro de Notas/Alunos\n");
+	for(i = 0; i < quantidade; i++){
+	printf("Digite o nome do(a) aluno(a): \n ");
+	scanf("%s", &nome_Aluno);
+	printf("Digite a primeira nota: \n");
+	scanf("%f", &nota1); 
+	printf("Digite a segunda nota: \n");
+	scanf("%f", &nota2);
+	printf("Digite a terceira nota: \n ");
+	scanf("%f", &nota3);
+	printf("Digite a quarta nota: \n");
+	scanf("%f", &nota4);
+	int total = nota1 + nota2 + nota3 + nota4;
+	printf("Total das notas: %i \n", total);
+	float media_Notas = total/4;
+	printf("Média aritmética: %f \n", media_Notas); 
+	
+	printf("\n");
+    
+    printf("Resultado Geral: ");
+    if (media_Notas<4) {
+	 printf( "REPROVADO\n"); 
+	 } else {
+	 	if ((media_Notas>=4) && (media_Notas<=6)){
+		 printf("RECUPERACAO\n");
+		 }} if (media_Notas > 6){
+		 	printf("APROVADO\n");
+		 }
+	 printf("\n");
+	}
+	
+	printf("\n");	
+    
+	system("pause");	
+	return;
+}
+void alteracao_notas() {
+	system("cls");
+	printf("Alteração de Notas/Alunos\n");
+	// agora vou alterar os dados de notas e alunos.
+	
+	
+	
+	system("pause");	
+	return;
+}
+
+int main() {	
+	setlocale(LC_ALL,"");
+	int opcao=0;
+	printf("Carregando o sistema... aguarde");
+	Sleep(300);
+
+	while ((opcao != 1) && (opcao !=2) && (opcao != 3)) {		
+		system("cls");
+		printf("Menu\n");
+		printf("---------------\n");
+		printf("1-Cadastro de Notas/Alunos\n");
+		printf("2-Alteracao de Notas/Alunos\n");
+		printf("3-Sair\n");
+		printf("Opção: ");
+		scanf("%i",&opcao);
+	    int cont = 0;
+		if (opcao == 1) {
+			cadastro_notas(); 
+			opcao = 0;
+		} else {
+			if (opcao == 2) {
+				alteracao_notas();
+				opcao = 0;
+			} else {
+				if (opcao == 3) {
+					exit;
+				}
+			}
+		}
+	}
+	
+	return 0;
+}
