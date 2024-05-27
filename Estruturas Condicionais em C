@@ -15,14 +15,27 @@ void cadastro_notas() {
 	for(i = 0; i < quantidade; i++){
 	printf("Digite o nome do(a) aluno(a): \n ");
 	scanf("%s", &nome_Aluno);
-	printf("Digite a primeira nota: \n");
-	scanf("%f", &nota1); 
-	printf("Digite a segunda nota: \n");
-	scanf("%f", &nota2);
-	printf("Digite a terceira nota: \n ");
-	scanf("%f", &nota3);
-	printf("Digite a quarta nota: \n");
-	scanf("%f", &nota4);
+	nota1 = 99;
+	while ((nota1 < 0) || (nota1 > 10)) {
+		printf("Digite a primeira nota: \n");
+		scanf("%f", &nota1); 		
+	}
+	nota2 = 99;
+	while ((nota2 < 0) || (nota2 > 10)) {
+		printf("Digite a segunda nota: \n");
+		scanf("%f", &nota2);
+	}
+	nota3 = 99;
+	while ((nota3 < 0) || (nota3 > 10)) {
+		printf("Digite a terceira nota: \n");
+		scanf("%f", &nota3);
+	}
+	nota4 = 99;
+	while ((nota4 < 0) || (nota4 > 10)) {
+		printf("Digite a quarta nota: \n");
+		scanf("%f", &nota4);
+	}
+	
 	int total = nota1 + nota2 + nota3 + nota4;
 	printf("Total das notas: %i \n", total);
 	float media_Notas = total/4;
@@ -50,8 +63,8 @@ void cadastro_notas() {
 void alteracao_notas() {
 	system("cls");
 	printf("Alteração de Notas/Alunos\n");
-	// agora vou alterar os dados de notas e alunos.
-	
+	printf("Digite o nome do(a) aluno(a) que deseja alterar as notas: \n");
+	scanf("%s", &nome&aluno);
 	
 	
 	system("pause");	
